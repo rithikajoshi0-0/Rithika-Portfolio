@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lavender: #B094FF;
+  --blush-pink: #FF8FA3;
+  --mint: #65EDBB;
+  --periwinkle: #A3AEFF;
+  --cream: #FFF5E8;
+  --soft-shadow: 0 4px 20px rgba(176, 148, 255, 0.35);
+}
+
+body {
+  @apply bg-gradient-to-b from-[#E6D6FF] to-[#D4C1FF] min-h-screen font-sans;
+  color: #4A4A68;
+}
+
+.font-serif {
+  font-family: 'DM Serif Display', serif;
+}
+
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.magic-border {
+  position: relative;
+  border: 1px solid rgba(176, 148, 255, 0.4);
+}
+
+.magic-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(176, 148, 255, 0.3),
+    rgba(255, 143, 163, 0.3),
+    rgba(101, 237, 187, 0.3)
+  );
+  z-index: -1;
+  border-radius: inherit;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.magic-border:hover::before {
+  opacity: 1;
+}
+
+.sparkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 4s linear infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.1); }
+  50% { opacity: 0.8; transform: scale(1); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-delay-1 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.floating-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.journal-page {
+  background-color: white;
+  background-image: 
+    linear-gradient(90deg, transparent 39px, #D4C1FF 39px, #D4C1FF 41px, transparent 41px),
+    linear-gradient(#F0E6FF .1em, transparent .1em);
+  background-size: 100% 1.5em;
+  box-shadow: 0 3px 15px rgba(176, 148, 255, 0.25);
+}
+
+.enchanted-button {
+  background: linear-gradient(135deg, #B094FF 0%, #A3AEFF 100%);
+  transition: all 0.3s ease;
+}
+
+.enchanted-button:hover {
+  background: linear-gradient(135deg, #A3AEFF 0%, #B094FF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(176, 148, 255, 0.4);
+}
+
+.crystal-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.crystal-card:hover {
+  transform: perspective(1000px) translateZ(10px);
+  box-shadow: 
+    0 5px 20px rgba(176, 148, 255, 0.4),
+    0 0 0 1px rgba(176, 148, 255, 0.2);
+}
+
+.crystal-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #B094FF, #FF8FA3, #65EDBB, #A3AEFF);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.crystal-card:hover::before {
+  opacity: 0.7;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #B094FF, #FF8FA3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
