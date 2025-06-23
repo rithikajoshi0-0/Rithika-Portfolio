@@ -69,10 +69,10 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center">
           <div className="flex space-x-6 mb-6">
             {[
-              { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/rithikajoshi" },
-              { icon: <Github size={20} />, href: "https://github.com/rithikajoshi" },
-              { icon: <Twitter size={20} />, href: "https://twitter.com/rithikajoshi" },
-              { icon: <Mail size={20} />, href: "mailto:hello@rithikajoshi.com" }
+              { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/rithika-joshi-b-b24612328" },
+              { icon: <Github size={20} />, href: "https://github.com/rithikajoshi0-0" },
+        
+              { icon: <Mail size={20} />, href: "rithikajoshi.b@gmail.com" }
             ].map((social, index) => (
               <a 
                 key={index}
